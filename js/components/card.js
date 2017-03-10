@@ -1,11 +1,18 @@
-// Create a Card component in js/components/card.js that renders a <div> containing the text "This is a card"
+// A text prop that contains the content of the card
 
 import React from 'react';
 
-export default function Card() {
-	return (
-		<div className="card">
-			<p>This is a card</p>
-		</div>
-	);
+class Card extends React.Component {
+	constructor(props){
+		super(props);
+	}
+	render () {
+		return (
+			<div className="card">
+				<p>{this.props.text}</p>
+			</div>
+		)
+	}
 }
+
+export default Card;
