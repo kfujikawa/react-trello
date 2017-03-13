@@ -1,6 +1,3 @@
-// A title prop that contains the title of the board.
-// A lists prop that contains an array of the titles of the board's lists.
-
 import React from 'react';
 import List from './list';
 

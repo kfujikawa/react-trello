@@ -8,36 +8,29 @@ class List extends React.Component {
 			value: ''
 		};
 
-		this.handleChange = this.handleChange.bind(this);
-		this.handleSubmit = this.handleSubmit.bind(this);
+		this.onAddInputChanged = this.onAddInputChanged.bind(this);
+		this.onAddSubmit = this.onAddSubmit.bind(this);
 	}
 
-	handleChange(event){
-		this.setState({value: event.target.value});
-	}
+onAddInputChanged(event){
+	this.setState({value: event.target.value});
+}
 
-	handleSubmit(event){
-		console.log("Submit event happened");
-		event.preventDefault();
-	}
-
-	renderCard(event){
-		return(
-			<Card text={this.state.value} />
-		)
-	}
+onAddSubmit(event){
+	event.preventDefault();
+	console.log("Submit event happened");
+}
 
 	render () {
 		return (
 			<div className="list">
 				<h1>{this.props.listTitle}</h1>
-				<Card text='I am a card 1'/>
-				<Card text='I am a card 2'/>
-				<Card submit={this.handleSubmit} change={this.onAddInputChanged}/>
-				<form onSubmit={this.handleSubmit}>
+				<Card text='I am the default card.'/>
+				<Card text={this.state.value}/>
+				<form onSubmit={this.onAddSubmit}>
 					<label>
 						New Card: 
-						<input type="text" value={this.state.value} onChange={this.handleChange}/>
+						<input type="text" placeholder="Add a Card!" onChange={this.onAddInputChanged}/>
 					</label>
 					<button type="submit">Submit</button>
 				</form>
