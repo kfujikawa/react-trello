@@ -1,20 +1,13 @@
 import React from 'react';
-import List from './list';
+import ListContainer from './list-container';
 
-class Board extends React.Component {
-	constructor(props){
-		super(props);
-	}
-	render () {
+export default class Board extends React.Component {
+	render (props) {
 		return (
 			<div className="board">
-				<div>{this.props.foo}</div>
-				<List listTitle='list title 1'/>
-				<List listTitle='list title 2'/>
-				<List listTitle='list title 3'/>
+				<ListContainer/>
+				{this.props.children}
 			</div>
 		)
 	}
 }
-
-export default Board;

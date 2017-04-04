@@ -1,12 +1,7 @@
-// A text prop that contains the content of the card
-
 import React from 'react';
 
-class Card extends React.Component {
-	constructor(props){
-		super(props);
-	}
-	render () {
+export default class Card extends React.Component {
+	render (props) {
 		return (
 			<div className="card">
 				<p>{this.props.text}</p>
@@ -14,5 +9,3 @@ class Card extends React.Component {
 		)
 	}
 }
-
-export default Card;

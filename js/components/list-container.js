@@ -1,22 +1,35 @@
 import React from 'react';
 import List from './list';
+import Card from './card';
 
 export default class ListContainer extends React.Component {
     constructor(props) {
-        const list = this.state.cards
         super(props);
+        // const list = this.state.cards
         this.state = {
-            text: '',
-            cards: []
+            text: 'Default Card 1',
+            title: ["Title 1"]
         };
+
+        this.onAddInputChanged = this.onAddInputChanged.bind(this);
+        this.onAddSubmit = this.onAddSubmit.bind(this);
     }
 
+onAddInputChanged(event){
+    this.setState({text: event.target.value});
+}
 
-    render(list) {
+onAddSubmit(event){
+    event.preventDefault();
+    console.log("Submit event happened");
+}
+
+
+    render(cards) {
         return (
             <div>
                 <ul>
-                {list}
+                    <List title={this.state.title}/>
                 </ul>
             </div>
         );
