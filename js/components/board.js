@@ -8,7 +8,6 @@ class Board extends React.Component {
 	render () {
 		return (
 			<div className="board">
-				<div>{this.props.foo}</div>
 				<List listTitle='list title 1'/>
 				<List listTitle='list title 2'/>
 				<List listTitle='list title 3'/>
