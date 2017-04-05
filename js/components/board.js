@@ -1,5 +1,5 @@
 import React from 'react';
-import List from './list';
+import ListContainer from './list-container';
 
 class Board extends React.Component {
 	constructor(props){
@@ -8,9 +8,9 @@ class Board extends React.Component {
 	render () {
 		return (
 			<div className="board">
-				<List listTitle='list title 1'/>
-				<List listTitle='list title 2'/>
-				<List listTitle='list title 3'/>
+				<ListContainer listTitle='list title 1'/>
+				<ListContainer listTitle='list title 2'/>
+				<ListContainer listTitle='list title 3'/>
 			</div>
 		)
 	}
